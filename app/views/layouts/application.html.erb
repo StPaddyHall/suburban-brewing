@@ -9,14 +9,15 @@
 </head>
 <body>
 
-  <div class="container col-lg-8 col-lg-offset-2">
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/navigation' %>
-    
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
-    <%= yield %>
+  <div class="container">
+    <div class="container col-lg-8 col-lg-offset-2">
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/navigation' %>
+      
+      <%= render 'layouts/messages' %>
+      
+      <%= yield %>
+    </div>
   </div>
 
 </body>
