@@ -1,0 +1,31 @@
+<%#= render 'shared/errors', obj: @article %>
+
+<%= form_for @article, :html => { multipart: true } do |f| %>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-lg-12' %>
+    <%= f.text_field :title, :class => 'form-control' %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :body, :class => 'control-label col-lg-12' %>
+    <%= f.text_area :body, :class => 'form-control', rows: '20' %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :picture, :class => 'control-label col-lg-12' %>
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', :class => "picture-input col-lg-12" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $('#article_picture').bind('change', function() {
+      size_in_megabytes = this.files[0].size/1024/1024;
+      if (size_in_megabytes > 5) {
+          alert('Maximum file size is 5MB. Please choose a smaller file');
+      }
+  });
+</script>

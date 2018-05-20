@@ -1,1 +1,22 @@
-Home Page
+<!--
+<article>
+  <h2>Pabst Blue Ribbon may be the best session beer ever!</h2>
+  <p class="published">By Patrick Hall | Published 2 hours ago</p>
+  <div class="placeholder"></div>
+  <p>
+      This is some placeholder text to see how it looks under an image placeholder
+  </p>
+</article>
+-->
+
+<% @articles.each do |article| %>
+<article>
+  <h2><%= link_to article.title, article_path(article) %></h2>
+  <p class="published">By <%= article.user.firstname %> <%= article.user.lastname %> | Published <%= time_ago_in_words(article.created_at) %> ago</p>
+  <div>
+    <%= image_tag(article.picture.url, class: "article_image") if article.picture? %>
+  </div>
+  <p><%= simple_format(article.body) %></p>
+  <hr/>
+</article> 
+<% end %>

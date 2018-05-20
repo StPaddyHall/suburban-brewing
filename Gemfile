@@ -22,11 +22,21 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'simple_form'
+
 # Devise
 gem 'devise'
 
 # Bootstrap
 gem 'devise-bootstrap-views'
+
+# Image Upload
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
+
+# Added in order to run server
+gem 'net-ssh'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

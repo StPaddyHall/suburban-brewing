@@ -29,3 +29,36 @@ ul {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+article h2 {
+  font-weight: 900;
+}
+
+article p {
+  font-size: 1.3em;
+}
+
+.article_image {
+  width: 100%;
+}
+
+.picture-input {
+  padding-bottom: 20px;
+  padding-left: 0px !important;
+}
+
+.control-label {
+  padding-left: 0px;
+}
+
+.placeholder {
+  background-color: grey;
+  height: 400px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.published {
+  font-size: 1em;
+  font-weight: 300;
+}
