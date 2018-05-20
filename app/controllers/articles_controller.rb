@@ -22,6 +22,26 @@ class ArticlesController < ApplicationController
     end
   end
   
+  def edit
+    @article = Article.find(params[:id])
+  end
+   
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      flash[:success] = "Your Article has been successfully updated!"
+      redirect_to article_path(@article)
+    else
+      render :edit
+    end         
+  end
+   
+   def destroy
+      Article.find(params[:id]).destroy
+      flash[:success] = "Article Deleted"
+      redirect_to root_path
+   end
+  
   private 
    
     def article_params

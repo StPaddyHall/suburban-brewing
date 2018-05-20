@@ -1,0 +1,14 @@
+<% if @article.user == current_user %>
+  <%= link_to "Edit Article", edit_article_path(@article), class: "btn btn-primary" %>
+  <%= link_to "Delete Article", @article, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+<% end %>
+
+<article>
+  <h2><%= @article.title %></h2>
+  <p class="published">By <%= @article.user.firstname %> <%= @article.user.lastname %> | Published <%= time_ago_in_words(@article.created_at) %> ago</p>
+  <div>
+    <%= image_tag(@article.picture.url, class: "article_image") if @article.picture? %>
+  </div>
+  <p><%= simple_format(@article.body) %></p>
+  <hr/>
+</article> 
